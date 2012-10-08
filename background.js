@@ -266,7 +266,6 @@ function savePasswordToClipboard(password) {
 function generatePassCallback(menu, tab){
 	var pass = PwGen(words, 5);
 	savePasswordToClipboard(pass);
-	console.log(pass);
 	chrome.tabs.sendMessage(tab.id, { passphrase: pass });
 }
 chrome.contextMenus.onClicked.addListener(generatePassCallback);
