@@ -263,17 +263,19 @@ function savePasswordToClipboard(password) {
 	document.execCommand("copy");
 }
 
-function generatePassCallback(){
+function generatePassCallback(menu, tab){
 	var pass = PwGen(words, 5);
 	savePasswordToClipboard(pass);
 	console.log(pass);
+	chrome.tabs.sendMessage(tab.id, { passphrase: pass });
 }
 chrome.contextMenus.onClicked.addListener(generatePassCallback);
 
 chrome.runtime.onInstalled.addListener(function() {
 	var parent = chrome.contextMenus.create({
-		"title": "Generate a Passphrase",
-		"id": "passphrase"
+		"title": "Generate and Copy Passphrase",
+		"id": "passphrase",
+		"contexts": ["editable"]
 	});
 });
 
