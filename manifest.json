@@ -1,20 +1,20 @@
 {
-	"name": "Passphrase",
-	"version": "0.1",
-	"manifest_version": 2,
+  "name": "Passphrase",
+  "version": "0.1.1",
+  "manifest_version": 2,
 
-	"description": "Generate phrase-based passwords (correct horse battery staple)",
-	"icons": {
-		"16": "passphrase_icon_16x16.png"
-	},
+  "description": "Generate phrase-based passwords (correct horse battery staple)",
+  "icons": {
+    "16": "passphrase_icon_16x16.png"
+  },
 
-	"background": {
-		"scripts": [ "background.js" ],
-		"persistent": false
-	},
-	"permissions": [
-		"activeTab",
-		"clipboardWrite",
-		"contextMenus"
-	]
+  "background": {
+    "scripts": [ "background.js" ],
+    "persistent": false
+  },
+  "permissions": [
+    "activeTab",
+    "clipboardWrite",
+    "contextMenus"
+  ]
 }
