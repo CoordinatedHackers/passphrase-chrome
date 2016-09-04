@@ -1,6 +1,6 @@
 {
 	"name": "Passphrase",
-	"version": "0.2",
+	"version": "0.3",
 	"manifest_version": 2,
 
 	"description": "Generate phrase-based passwords (correct horse battery staple)",
@@ -12,13 +12,8 @@
 		"scripts": [ "background.js" ],
 		"persistent": false
 	},
-	"content_scripts": [
-		{
-			"matches": [ "<all_urls>" ],
-			"js": [ "content.js" ]
-		}
-	],
 	"permissions": [
+		"activeTab",
 		"clipboardWrite",
 		"contextMenus"
 	]
